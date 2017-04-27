@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>WebManager-Login</title>
+<!-- Custom Theme files -->
+<link href="css/login.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="shortcut icon" href="images/icos/ddg.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="loading/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="loading/css/styles.css">
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<div class="login" style="margin-top: 250px;">
+
+		<h2>DNF Manager System Initialization</h2>
+		<div class="progress">
+			<b class="progress__bar">
+			    <span class="progress__text">
+			      DNF Manager Initialization: <em>0%</em>
+			    </span>
+			</b>
+		</div>
+	</div>
+</body>
+<script type="application/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="loading/js/modernizr.js"></script>
+<script>
+    var $progress = $('.progress'), $bar = $('.progress__bar'), $text = $('.progress__text'), percent = 0, update, resetColors, speed = 200, orange = 30, yellow = 55, green = 85, timer;
+    resetColors = function () {
+        $bar.removeClass('progress__bar--green').removeClass('progress__bar--yellow').removeClass('progress__bar--orange').removeClass('progress__bar--blue');
+        $progress.removeClass('progress--complete');
+    };
+    update = function () {
+        timer = setTimeout(function () {
+            percent += Math.random() * 1.8;
+            percent = parseFloat(percent.toFixed(1));
+            $text.find('em').text(percent + '%');
+            if (percent >= 100) {
+                percent = 100;
+                $progress.addClass('progress--complete');
+                $bar.addClass('progress__bar--blue');
+                $text.find('em').text('Complete');
+                setTimeout(function () {
+                    window.parent.location = "index.html"
+                }, 1000);
+            } else {
+                if (percent >= green) {
+                    $bar.addClass('progress__bar--green');
+                } else if (percent >= yellow) {
+                    $bar.addClass('progress__bar--yellow');
+                } else if (percent >= orange) {
+                    $bar.addClass('progress__bar--orange');
+                }
+                speed = Math.floor(Math.random() * 90);
+                update();
+            }
+            $bar.css({ width: percent + '%' });
+        }, speed);
+    };
+    setTimeout(function () {
+        $progress.addClass('progress--active');
+        update();
+    }, 100);
+</script>
+</html>

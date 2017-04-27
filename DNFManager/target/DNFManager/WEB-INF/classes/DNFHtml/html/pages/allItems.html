@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div style="padding: 10px;margin: 10px;">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        物品详情
+                    </div>
+                    <div class="panel-body">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>物品代码</th>
+                                <th>物品名称</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX">
+                                    <td>1</td>
+                                    <td>物品1</td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>2</td>
+                                    <td>物品2</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr><tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>3</td>
+                                    <td>物品3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="well">
+                            <button type="button" class="btn btn-primary" style="margin-bottom: 3px">所有物品</button>&nbsp;&nbsp;
+                            <button type="button" class="btn btn-info" style="margin-bottom: 3px">常用材料</button>&nbsp;&nbsp;
+                            <button type="button" class="btn btn-warning" style="margin-bottom: 3px">常用时装</button>&nbsp;&nbsp;
+                            <button type="button" class="btn btn-danger" style="margin-bottom: 3px">75/85史诗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        信息填写
+                    </div>
+                    <div class="panel-body">
+                        <h3>物品代码：
+                            <input type="number" id="itemCode">
+                        </h3>
+                        <h3>物品数量：
+                            <input type="number" id="itemNum">
+                        </h3>
+                        <h3>强化等级：
+                            <input type="number" id="qhLevel">
+                        </h3>
+                        <h3>锻造等级：
+                            <input type="number" id="dzLevel">
+                        </h3>
+                        <h3>游戏金币：
+                            <input type="number" id="money">
+                        </h3>
+                        <h3>是否红字：
+                            <input type="checkbox" id="isRed" onchange="changeRed()">是&nbsp;<select id="redType" disabled="disabled" style="width: 200px;height:40px;font-size: 16px;padding: 2px;color: #aaaaaa">
+                                <option value="1">力量</option>
+                                <option value="2">智力</option>
+                            </select>
+                        </h3>
+                        <h3>是否封装：
+                            <input type="checkbox" id="isFeng">是&nbsp;<span style="color: #9f191f;font-size: 16px">史诗装备请勿封装！</span>
+                        </h3>
+                        <h3>角色邮件：
+                            <button type="button" class="btn btn-primary" style="margin-bottom: 3px">发送邮件</button>
+                        </h3>
+                        <h3>全服邮件：
+                            <button type="button" class="btn btn-info" style="margin-bottom: 3px">发送邮件</button>
+                        </h3>
+                        <h3>全服VIP邮件：
+                            <button type="button" class="btn btn-warning" style="margin-bottom: 3px">发送邮件</button>
+                        </h3>
+                        <h3>在线角色邮件：
+                            <button type="button" class="btn btn-danger" style="margin-bottom: 3px">发送邮件</button>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+
+        function changeRed() {
+            if($('#isRed').prop('checked')){
+                $('#redType').prop('disabled','');
+            }else{
+                $('#redType').prop('disabled','disabled');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

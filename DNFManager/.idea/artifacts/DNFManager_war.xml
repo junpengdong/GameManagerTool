@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DNFManager:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="DNFManager.war">
+      <element id="artifact" artifact-name="DNFManager:war exploded" />
+    </root>
+  </artifact>
+</component>

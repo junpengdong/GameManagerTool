@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>地下城与勇士</title>
+        <link type="text/css" rel="stylesheet" href="css/css.css"/>
+        <link type="text/css" rel="stylesheet" href="css/jquery.tool.css"/>
+        <link type="text/css" rel="stylesheet" href="css/smartMenu.css"/>
+        <link rel="shortcut icon" href="images/icos/dnf.png" type="image/x-icon">
+        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.tool.js"></script>
+        <script type="text/javascript" src="js/shortcut.js"></script>
+        <script type="text/javascript" src="js/templates.js"></script>
+        <script type="text/javascript" src="js/jquery-smartMenu.js"></script>
+        <script type="text/javascript" src="js/core.js"></script>
+        <script type="text/javascript">
+            $().ready(function(){
+                //IE下禁止选中
+                document.body.onselectstart = document.body.ondrag = function(){return false;}
+                //初始化
+                Core.init();
+            });
+        </script>
+    </head>
+    <body id="lxcn" style="background:url(images/background.jpg) no-repeat">
+        <div id="task-bar">
+            <ul class="task-begin">
+                <img src="images/icos/apple.png" />
+            </ul>
+            <ul class="task-window">
+            </ul>
+            <ul class="task-panel">
+                <li class="sys" title="系统时间"><div id="current-time" style="margin: 0 0 3px 0;"></div><div id="current-date" style="margin-top: -5px"></div></li>
+            </ul>
+        </div>
+        <div id="desk"><ul></ul></div>
+    </body>
+    <script>
+
+        if(sessionStorage.getItem("userAccount") == null){
+            window.parent.location = "./html/pages/login.html";
+        }
+
+        setInterval(function() {
+            $('#current-time').text(Appendzero((new Date()).getHours())+':'+Appendzero((new Date()).getMinutes()));
+            $('#current-date').text((new Date()).toLocaleString());
+        }, 1000);
+
+        function Appendzero (obj) {
+            if (obj < 10)
+                return "0" + obj;
+            else
+                return obj;
+        }
+    </script>
+</html>

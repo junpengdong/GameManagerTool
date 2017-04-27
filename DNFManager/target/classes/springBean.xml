@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!--<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">-->
+		<!--<property name="maxTotal" value="100"></property>-->
+		<!--<property name="maxIdle" value="20"></property>-->
+		<!--<property name="minIdle" value="1"></property>-->
+		<!--<property name="maxWaitMillis" value="1000"></property>-->
+		<!--<property name="testOnBorrow" value="true"></property>-->
+		<!--<property name="testOnReturn" value="true"></property>-->
+		<!--<property name="testWhileIdle" value="true"></property>-->
+	<!--</bean>-->
+
+	<!--<bean id="jedisCluster" class="redis.clients.jedis.JedisCluster">-->
+		<!--<constructor-arg>-->
+			<!--<set>-->
+				<!--<bean class="redis.clients.jedis.HostAndPort">-->
+					<!--<constructor-arg value="192.168.8.200"></constructor-arg>-->
+					<!--<constructor-arg value="7001" type="int"></constructor-arg>-->
+				<!--</bean>-->
+				<!---->
+				<!--<bean class="redis.clients.jedis.HostAndPort">-->
+					<!--<constructor-arg value="192.168.8.200"></constructor-arg>-->
+					<!--<constructor-arg value="7002" type="int"></constructor-arg>-->
+				<!--</bean>-->
+				<!---->
+				<!--<bean class="redis.clients.jedis.HostAndPort">-->
+					<!--<constructor-arg value="192.168.8.200"></constructor-arg>-->
+					<!--<constructor-arg value="7003" type="int"></constructor-arg>-->
+				<!--</bean>-->
+				<!---->
+				<!--<bean class="redis.clients.jedis.HostAndPort">-->
+					<!--<constructor-arg value="192.168.8.200"></constructor-arg>-->
+					<!--<constructor-arg value="7004" type="int"></constructor-arg>-->
+				<!--</bean>-->
+				<!---->
+				<!--<bean class="redis.clients.jedis.HostAndPort">-->
+					<!--<constructor-arg value="192.168.8.200"></constructor-arg>-->
+					<!--<constructor-arg value="7005" type="int"></constructor-arg>-->
+				<!--</bean>-->
+				<!---->
+				<!--<bean class="redis.clients.jedis.HostAndPort">-->
+					<!--<constructor-arg value="192.168.8.200"></constructor-arg>-->
+					<!--<constructor-arg value="7006" type="int"></constructor-arg>-->
+				<!--</bean>-->
+			<!--</set>-->
+		<!--</constructor-arg>-->
+
+		<!--<constructor-arg value="6000" />-->
+		<!--<constructor-arg value="100" />-->
+		<!--<constructor-arg ref="jedisPoolConfig" />-->
+	<!--</bean>-->
+	
+</beans>
